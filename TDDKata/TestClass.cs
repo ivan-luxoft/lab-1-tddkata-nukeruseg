@@ -114,5 +114,25 @@ namespace TDDKata
             int actual = calc.Sum(arguments);
             Assert.AreEqual(expected, actual);
         }
+
+        [Test]
+        public void DelimeterNewLineShouldReturnSum()
+        {
+            StringCalc calc = new StringCalc();
+            string arguments = "0\n1\n2";
+            int expected = 3;
+            int actual = calc.Sum(arguments);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void MixedDelimetersShouldReturnSum()
+        {
+            StringCalc calc = new StringCalc();
+            string arguments = "0\n1,2";
+            int expected = 3;
+            int actual = calc.Sum(arguments);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
