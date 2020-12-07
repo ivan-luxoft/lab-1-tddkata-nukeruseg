@@ -18,16 +18,6 @@ namespace TDDKata
         }
 
         [Test]
-        public void MoreThanTwoArgumentsShouldReturnError()
-        {
-            StringCalc calc = new StringCalc();
-            string arguments = "3,3,3";
-            int expected = -1;
-            int actual = calc.Sum(arguments);
-            Assert.AreEqual(expected, actual);
-        }
-
-        [Test]
         public void EmptyStringShouldReturnZero()
         {
             StringCalc calc = new StringCalc();
@@ -101,6 +91,26 @@ namespace TDDKata
             StringCalc calc = new StringCalc();
             string arguments = "0";
             int expected = 0;
+            int actual = calc.Sum(arguments);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void ThreeArgumentsShouldReturnSum()
+        {
+            StringCalc calc = new StringCalc();
+            string arguments = "3,3,3";
+            int expected = 9;
+            int actual = calc.Sum(arguments);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void TenArgumentsShouldReturnSum()
+        {
+            StringCalc calc = new StringCalc();
+            string arguments = "0,1,2,3,4,5,6,7,8,9";
+            int expected = 45;
             int actual = calc.Sum(arguments);
             Assert.AreEqual(expected, actual);
         }

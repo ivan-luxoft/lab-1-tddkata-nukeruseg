@@ -14,9 +14,7 @@ namespace TDDKata
                 return ERROR;
             if (input.Equals(string.Empty))
                 return 0;
-            string[] arguments = input.Split(',');
-            if (arguments.Length > 2)
-                return ERROR;
+            string[] arguments = input.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
             foreach(string argument in arguments)
             {
                 if (!int.TryParse(argument, out int intArgument) || intArgument < 0)
