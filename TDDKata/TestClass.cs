@@ -134,5 +134,34 @@ namespace TDDKata
             int actual = calc.Sum(arguments);
             Assert.AreEqual(expected, actual);
         }
+
+        [Test]
+        public void CustomDelimeterShouldReturnSum()
+        {
+            StringCalc calc = new StringCalc();
+            string arguments = "//;\n1;2";
+            int expected = 3;
+            int actual = calc.Sum(arguments);
+            Assert.AreEqual(expected, actual);
+        }
+        [Test]
+        public void StringCustomDelimeterShouldReturnSum()
+        {
+            StringCalc calc = new StringCalc();
+            string arguments = "//and\n1and2";
+            int expected = 3;
+            int actual = calc.Sum(arguments);
+            Assert.AreEqual(expected, actual);
+        }
+        [Test]
+        public void NumberCustomDelimeterShouldReturnSum()
+        {
+            StringCalc calc = new StringCalc();
+            string arguments = "//43\n1432";
+            int expected = 3;
+            int actual = calc.Sum(arguments);
+            Assert.AreEqual(expected, actual);
+        }
+
     }
 }
