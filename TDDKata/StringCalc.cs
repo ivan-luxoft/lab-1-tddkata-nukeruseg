@@ -44,8 +44,10 @@ namespace TDDKata
 
             foreach (string argument in arguments)
             {
-                if (!int.TryParse(argument, out int intArgument) || intArgument < 0)
+                if (int.TryParse(argument, out int intArgument) && intArgument >= 0)
                     result.Add(intArgument);
+                else
+                    return null;
             }
 
             return result;
